@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='img/health.ico') }}">
+    <title>Liver Disease Prediction</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+        overflow-x: hidden;
+      }
+
+      #intro {
+        padding: 60px 30px;
+      }
+
+      h1 {
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      img {
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+
+      img:hover {
+        transform: scale(1.02);
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-control {
+        border-radius: 10px;
+        padding: 12px 15px;
+      }
+
+      .btn {
+        border-radius: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 12px;
+        transition: all 0.3s;
+      }
+
+      .btn-submit {
+        background-color: #e74c3c;
+        border: none;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        background-color: #c0392b;
+      }
+
+      .info-icon {
+        color: #3498db;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+
+      .input-group-text {
+        background-color: #f8f9fa;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="intro" class="container-fluid">
+      <h1 class="text-center text-capitalize pb-4 animate__animated animate__fadeInDown">
+        <i class="fas fa-heartbeat mr-2"></i>Liver Disease Risk Assessment
+      </h1>
+      <hr class="w-75 mx-auto pb-4">
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12 animate__animated animate__zoomIn">
+          <img src="/static/liver.jpg" class="img-fluid">
+          <div class="card bg-light p-3 mt-4">
+            <h5 class="card-title"><i class="fas fa-info-circle mr-2"></i>About This Test</h5>
+            <p class="card-text">This assessment evaluates your risk of liver disease based on standard clinical parameters. Please provide accurate laboratory results for the most reliable prediction.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12 animate__animated animate__fadeInRight">
+          <form id="predictionForm" novalidate>
+            <!-- Age -->
+            <div class="form-group">
+              <label for="Age">Age <i class="fas fa-info-circle info-icon" title="Patient's age in years"></i></label>
+              <input class="form-control" type="number" id="Age" name="Age" required 
+                     placeholder="e.g. 45" min="1" max="120">
+              <div class="error-message" id="age-error"></div>
+            </div>
+            
+            <!-- Gender -->
+            <div class="form-group">
+              <label for="Gender">Gender</label>
+              <select class="form-control" id="Gender" name="Gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+              <div class="error-message" id="gender-error"></div>
+            </div>
+            
+            <!-- Bilirubin Levels -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Total_Bilirubin">Total Bilirubin <i class="fas fa-info-circle info-icon" title="Normal range: 0.1-1.2 mg/dL"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Total_Bilirubin" name="Total_Bilirubin" required 
+                         placeholder="e.g. 0.7" step="0.1" min="0" max="30">
+                  <div class="input-group-append">
+                    <span class="input-group-text">mg/dL</span>
+                  </div>
+                </div>
+                <div class="error-message" id="total-bilirubin-error"></div>
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="Direct_Bilirubin">Direct Bilirubin <i class="fas fa-info-circle info-icon" title="Normal range: 0.0-0.3 mg/dL"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Direct_Bilirubin" name="Direct_Bilirubin" required 
+                         placeholder="e.g. 0.2" step="0.1" min="0" max="20">
+                  <div class="input-group-append">
+                    <span class="input-group-text">mg/dL</span>
+                  </div>
+                </div>
+                <div class="error-message" id="direct-bilirubin-error"></div>
+              </div>
+            </div>
+            
+            <!-- Enzyme Levels -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Alkaline_Phosphotase">Alkaline Phosphatase <i class="fas fa-info-circle info-icon" title="Normal range: 44-147 IU/L"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" required 
+                         placeholder="e.g. 120" step="1" min="20" max="1400">
+                  <div class="input-group-append">
+                    <span class="input-group-text">IU/L</span>
+                  </div>
+                </div>
+                <div class="error-message" id="alkaline-error"></div>
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="Alamine_Aminotransferase">ALT (Alanine Aminotransferase) <i class="fas fa-info-circle info-icon" title="Normal range: 7-56 IU/L"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" required 
+                         placeholder="e.g. 30" step="1" min="5" max="2000">
+                  <div class="input-group-append">
+                    <span class="input-group-text">IU/L</span>
+                  </div>
+                </div>
+                <div class="error-message" id="alt-error"></div>
+              </div>
+            </div>
+            
+            <!-- Additional Tests -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Aspartate_Aminotransferase">AST (Aspartate Aminotransferase) <i class="fas fa-info-circle info-icon" title="Normal range: 10-40 IU/L"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase" required 
+                         placeholder="e.g. 25" step="1" min="5" max="2000">
+                  <div class="input-group-append">
+                    <span class="input-group-text">IU/L</span>
+                  </div>
+                </div>
+                <div class="error-message" id="ast-error"></div>
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="Total_Protiens">Total Proteins <i class="fas fa-info-circle info-icon" title="Normal range: 6.0-8.3 g/dL"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Total_Protiens" name="Total_Protiens" required 
+                         placeholder="e.g. 7.5" step="0.1" min="2" max="10">
+                  <div class="input-group-append">
+                    <span class="input-group-text">g/dL</span>
+                  </div>
+                </div>
+                <div class="error-message" id="protein-error"></div>
+              </div>
+            </div>
+            
+            <!-- Albumin Levels -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Albumin">Albumin <i class="fas fa-info-circle info-icon" title="Normal range: 3.5-5.0 g/dL"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Albumin" name="Albumin" required 
+                         placeholder="e.g. 4.2" step="0.1" min="1" max="6">
+                  <div class="input-group-append">
+                    <span class="input-group-text">g/dL</span>
+                  </div>
+                </div>
+                <div class="error-message" id="albumin-error"></div>
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="Albumin_and_Globulin_Ratio">A/G Ratio <i class="fas fa-info-circle info-icon" title="Albumin/Globulin ratio (Normal: 1.0-2.2)"></i></label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="Albumin_and_Globulin_Ratio" name="Albumin_and_Globulin_Ratio" required 
+                         placeholder="e.g. 1.5" step="0.1" min="0.1" max="3">
+                  <div class="input-group-append">
+                    <span class="input-group-text">ratio</span>
+                  </div>
+                </div>
+                <div class="error-message" id="ag-ratio-error"></div>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-submit btn-block">
+              <i class="fas fa-heartbeat mr-2"></i>Assess Liver Health
+            </button>
+          </form>  
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center p-4">
+            <div class="spinner-border text-danger" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <h5 class="mt-3">Analyzing your results...</h5>
+            <p>This may take a few moments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+      // Form validation
+      $(document).ready(function() {
+        // Initialize tooltips
+        $('[title]').tooltip();
+        
+        // AJAX Form Submission
+        $('#predictionForm').on('submit', function(e) {
+          e.preventDefault();
+          
+          if (!validateForm()) {
+            return false;
+          }
+          
+          $('#loadingModal').modal('show');
+          
+          $.ajax({
+            type: 'POST',
+            url: '/predict',
+            data: $(this).serialize(),
+            success: function(response) {
+              $('#loadingModal').modal('hide');
+              $('body').html(response);
+            },
+            error: function(xhr) {
+              $('#loadingModal').modal('hide');
+              alert('Error: ' + xhr.responseText);
+            }
+          });
+        });
+        
+        // Validate form function
+        function validateForm() {
+          let isValid = true;
+          
+          // Validate Age
+          const age = $('#Age').val();
+          if (!age || age < 1 || age > 120) {
+            $('#age-error').text('Please enter a valid age (1-120)');
+            isValid = false;
+          } else {
+            $('#age-error').text('');
+          }
+          
+          // Validate Gender
+          const gender = $('#Gender').val();
+          if (!gender) {
+            $('#gender-error').text('Please select a gender');
+            isValid = false;
+          } else {
+            $('#gender-error').text('');
+          }
+          
+          // Validate all numeric fields
+          const numericFields = [
+            { id: 'Total_Bilirubin', errorId: 'total-bilirubin-error', min: 0, max: 30, name: 'Total Bilirubin' },
+            { id: 'Direct_Bilirubin', errorId: 'direct-bilirubin-error', min: 0, max: 20, name: 'Direct Bilirubin' },
+            { id: 'Alkaline_Phosphotase', errorId: 'alkaline-error', min: 20, max: 1400, name: 'Alkaline Phosphatase' },
+            { id: 'Alamine_Aminotransferase', errorId: 'alt-error', min: 5, max: 2000, name: 'ALT' },
+            { id: 'Aspartate_Aminotransferase', errorId: 'ast-error', min: 5, max: 2000, name: 'AST' },
+            { id: 'Total_Protiens', errorId: 'protein-error', min: 2, max: 10, name: 'Total Proteins' },
+            { id: 'Albumin', errorId: 'albumin-error', min: 1, max: 6, name: 'Albumin' },
+            { id: 'Albumin_and_Globulin_Ratio', errorId: 'ag-ratio-error', min: 0.1, max: 3, name: 'A/G Ratio' }
+          ];
+          
+          numericFields.forEach(field => {
+            const value = parseFloat($(`#${field.id}`).val());
+            if (isNaN(value) || value < field.min || value > field.max) {
+              $(`#${field.errorId}`).text(`Please enter a valid ${field.name} (${field.min}-${field.max})`);
+              isValid = false;
+            } else {
+              $(`#${field.errorId}`).text('');
+            }
+          });
+          
+          return isValid;
+        }
+      });
+    </script>
+  </body>
+</html>

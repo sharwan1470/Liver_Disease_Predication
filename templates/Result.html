@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Liver Disease Prediction Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+      body {
+        font-family: 'Josefin Sans', sans-serif;
+        background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+        padding-top: 50px;
+      }
+      .result-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: auto;
+      }
+      .result-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      .positive {
+        color: #e74c3c;
+      }
+      .negative {
+        color: #2ecc71;
+      }
+      .btn-back {
+        background-color: #3498db;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 10px 25px;
+        transition: all 0.3s;
+      }
+      .btn-back:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .recommendations {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 30px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="result-container text-center animate__animated animate__fadeIn">
+        {% if prediction_text == "The person is likely to have liver disease." %}
+          <div class="result-icon positive">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <h2 class="mb-3">Risk Detected</h2>
+          <p class="lead text-danger font-weight-bold">{{ prediction_text }}</p>
+          
+          <div class="recommendations">
+            <h5><i class="fas fa-clipboard-list mr-2"></i>Recommended Actions:</h5>
+            <ul class="text-left">
+              <li>Consult with a hepatologist or gastroenterologist</li>
+              <li>Schedule a comprehensive liver function test</li>
+              <li>Review your alcohol consumption</li>
+              <li>Consider dietary changes to support liver health</li>
+            </ul>
+          </div>
+        {% else %}
+          <div class="result-icon negative">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2 class="mb-3">Good News!</h2>
+          <p class="lead text-success font-weight-bold">{{ prediction_text }}</p>
+          
+          <div class="recommendations">
+            <h5><i class="fas fa-heart mr-2"></i>Maintenance Tips:</h5>
+            <ul class="text-left">
+              <li>Continue regular health check-ups</li>
+              <li>Maintain a balanced diet low in processed foods</li>
+              <li>Exercise regularly</li>
+              <li>Limit alcohol consumption</li>
+            </ul>
+          </div>
+        {% endif %}
+        
+        <a href="{{ url_for('home') }}" class="btn btn-back mt-4">
+          <i class="fas fa-arrow-left mr-2"></i>Back to Assessment
+        </a>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
