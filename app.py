@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Load the model
-model_path = os.path.join('templates', 'liver_model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'templates', 'liver_model.pkl')
 with open(model_path, 'rb') as f:
     model = pickle.load(f)
 
