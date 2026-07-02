@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About - Liver Disease Prediction System</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+      :root {
+        --primary-navy: #0A2540;
+        --accent-blue: #106cfc;
+        --accent-blue-hover: #0052cc;
+        --bg-light: #F4F7FC;
+        --border-color: #E2E8F0;
+        --text-dark: #1E293B;
+        --text-muted: #64748B;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6, .navbar-brand {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        background-color: var(--primary-navy) !important;
+        padding: 15px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        color: #ffffff !important;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-weight: 500;
+        margin-left: 20px;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover, .nav-link.active {
+        color: #ffffff !important;
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 60px 0;
+      }
+
+      .about-container {
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 40px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+
+      .about-header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 35px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+      }
+
+      .about-header-icon {
+        font-size: 2rem;
+        color: var(--accent-blue);
+      }
+
+      .about-header-title {
+        color: var(--primary-navy);
+        font-size: 1.8rem;
+        margin-bottom: 0;
+      }
+
+      .section-subtitle {
+        color: var(--accent-blue);
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+      }
+
+      .card-model {
+        background-color: #F8FAFC;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 30px;
+      }
+
+      .card-model h4 {
+        color: var(--primary-navy);
+        margin-bottom: 15px;
+        font-size: 1.15rem;
+      }
+
+      .card-model p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+
+      .metric-badge {
+        background-color: rgba(16, 108, 252, 0.1);
+        color: var(--accent-blue);
+        font-size: 0.85rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-top: 15px;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: var(--primary-navy);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 30px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        margin-top: 50px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <i class="fas fa-heartbeat text-danger"></i> Liver Disease Prediction
+        </a>
+        <button class="navbar-collapse-holder d-lg-none border-0 bg-transparent text-white" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/predict">Predict</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="col-xl-10 mx-auto">
+          <div class="about-container animate__animated animate__fadeInUp">
+            <div class="about-header-wrapper">
+              <i class="fas fa-info-circle about-header-icon"></i>
+              <h3 class="about-header-title">About the Project</h3>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="section-subtitle">System Overview</div>
+                <p class="mb-4">This predictive health system aims to assist in the early identification of liver disease. By assessing blood tests and basic patient metrics (e.g. Bilirubin, Enzymes, Proteins), the system provides an evaluation based on historical clinical dataset outcomes.</p>
+                
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <div class="card-model">
+                      <h4>📊 Machine Learning Model</h4>
+                      <p>The prediction core utilizes a **K-Nearest Neighbors (KNN)** Classifier. KNN functions by analyzing the multi-dimensional clinical parameters of the patient and finding the closest matching profiles in the trained clinical dataset to make a prediction.</p>
+                      <div class="metric-badge">Algorithm: KNN Classifier</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="card-model">
+                      <h4>💡 Dataset Details</h4>
+                      <p>The model was trained on the **Indian Liver Patient Dataset (ILPD)**, containing patient records collected from North East India. The records comprise clinical attributes detailing liver enzymes, protein configurations, and bilirubin counts.</p>
+                      <div class="metric-badge">Trained Records: 1000+ Profiles</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section-subtitle">Disclaimers & Notes</div>
+                <p class="text-muted">**Note:** This application is developed for educational and clinical benchmarking demonstration purposes. It is not intended to substitute for professional medical advice, diagnosis, or clinical treatments. Always consult a healthcare professional for clinical concerns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <i class="fas fa-heartbeat text-danger"></i> Liver Disease Prediction System
+          </div>
+          <div>
+            &copy; 2026 All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -12,10 +12,13 @@ with open(model_path, 'rb') as f:
 
 @app.route('/')
 def home():
-    return render_template('liver.html')
+    return render_template('home.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
+    if request.method == 'GET':
+        return render_template('predict.html')
+        
     try:
         # Get form data
         features = [
@@ -44,7 +47,11 @@ def predict():
     
     except Exception as e:
         error_message = f"Error occurred: {str(e)}"
-        return render_template('liver.html', error=error_message)
+        return render_template('predict.html', error=error_message)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

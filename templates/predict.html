@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Liver Disease Prediction System</title>
+    <title>Liver Disease Prediction Form</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -61,11 +61,6 @@
         gap: 10px;
       }
 
-      .navbar-brand img {
-        height: 30px;
-        border-radius: 5px;
-      }
-
       .nav-link {
         color: rgba(255, 255, 255, 0.8) !important;
         font-weight: 500;
@@ -77,248 +72,9 @@
         color: #ffffff !important;
       }
 
-      /* Hero Section */
-      .hero-section {
-        padding: 80px 0;
-        background-color: #F8FAFC;
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      .badge-ai {
-        background-color: rgba(16, 108, 252, 0.1);
-        color: var(--accent-blue);
-        font-weight: 600;
-        padding: 8px 16px;
-        border-radius: 30px;
-        font-size: 0.85rem;
-        display: inline-block;
-        margin-bottom: 20px;
-      }
-
-      .hero-title {
-        font-size: 2.8rem;
-        color: var(--primary-navy);
-        line-height: 1.2;
-        margin-bottom: 20px;
-      }
-
-      .hero-desc {
-        color: var(--text-muted);
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 30px;
-      }
-
-      .btn-primary-custom {
-        background-color: var(--accent-blue);
-        color: #ffffff;
-        font-weight: 600;
-        padding: 14px 28px;
-        border-radius: 8px;
-        border: none;
-        transition: all 0.3s;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .btn-primary-custom:hover {
-        background-color: var(--accent-blue-hover);
-        color: #ffffff;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(16, 108, 252, 0.3);
-        text-decoration: none;
-      }
-
-      .hero-image-container {
-        position: relative;
-        width: 340px;
-        height: 340px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-image-container::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 2px dashed rgba(16, 108, 252, 0.2);
-        border-radius: 50%;
-        animation: rotate-radar 25s linear infinite;
-      }
-
-      .hero-image-container::after {
-        content: '';
-        position: absolute;
-        width: 85%;
-        height: 85%;
-        border: 1px solid rgba(16, 108, 252, 0.1);
-        border-radius: 50%;
-      }
-
-      .hero-image-glow {
-        position: absolute;
-        width: 80%;
-        height: 80%;
-        background: radial-gradient(circle, rgba(16, 108, 252, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
-        border-radius: 50%;
-      }
-
-      .hero-image-container img {
-        width: 220px;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 50%;
-        z-index: 2;
-        box-shadow: 0 12px 30px rgba(16, 108, 252, 0.15);
-      }
-
-      .pulse-point {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        background-color: var(--accent-blue);
-        border-radius: 50%;
-        top: 20%;
-        right: 15%;
-        z-index: 3;
-        box-shadow: 0 0 0 rgba(16, 108, 252, 0.4);
-        animation: pulse 2s infinite;
-      }
-
-      /* Why Early Prediction Matters */
-      .why-section {
-        padding: 80px 0;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .section-header h2 {
-        color: var(--primary-navy);
-        font-size: 2rem;
-        margin-bottom: 15px;
-      }
-
-      .section-header p {
-        color: var(--text-muted);
-        font-size: 1rem;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .why-card {
-        background: #ffffff;
-        border-radius: 12px;
-        padding: 40px 30px;
-        text-align: center;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        transition: all 0.3s;
-        height: 100%;
-      }
-
-      .why-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-      }
-
-      .why-icon-wrapper {
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 25px;
-        font-size: 1.6rem;
-      }
-
-      .icon-blue {
-        background-color: rgba(16, 108, 252, 0.1);
-        color: var(--accent-blue);
-      }
-
-      .icon-green {
-        background-color: rgba(16, 185, 129, 0.1);
-        color: #10B981;
-      }
-
-      .icon-purple {
-        background-color: rgba(139, 92, 246, 0.1);
-        color: #8B5CF6;
-      }
-
-      .why-card h4 {
-        color: var(--primary-navy);
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-      }
-
-      .why-card p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 0;
-      }
-
-      /* About & Stats Section */
-      .about-section {
-        background-color: #F8FAFC;
-        padding: 80px 0;
-        border-top: 1px solid var(--border-color);
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      .about-title {
-        color: var(--primary-navy);
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-      }
-
-      .about-text {
-        color: var(--text-muted);
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-
-      .stats-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        padding-left: 40px;
-      }
-
-      .stat-item {
-        text-align: center;
-      }
-
-      .stat-number {
-        font-size: 2.8rem;
-        font-weight: 800;
-        color: var(--accent-blue);
-        line-height: 1;
-        margin-bottom: 10px;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-      }
-
-      .stat-label {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
       /* Form Section */
       .form-section {
-        padding: 80px 0;
+        padding: 60px 0;
       }
 
       .form-container {
@@ -435,6 +191,7 @@
         padding: 30px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 0.9rem;
+        margin-top: 50px;
       }
 
       .footer-container {
@@ -450,35 +207,13 @@
         color: #ffffff;
         font-weight: 600;
       }
-
-      /* Animations & Utilities */
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(16, 108, 252, 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(16, 108, 252, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(16, 108, 252, 0);
-        }
-      }
-
-      @keyframes rotate-radar {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-
-      .scroll-mt {
-        scroll-margin-top: 90px;
-      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <i class="fas fa-heartbeat text-danger"></i> Liver Disease Prediction
         </a>
         <button class="navbar-collapse-holder d-lg-none border-0 bg-transparent text-white" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -487,111 +222,21 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#home-section">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#predict-section">Predict</a>
+              <a class="nav-link active" href="/predict">Predict</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about-section">About</a>
+              <a class="nav-link" href="/about">About</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home-section" class="hero-section scroll-mt">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 col-12 animate__animated animate__fadeInLeft">
-            <span class="badge-ai">AI Powered Healthcare</span>
-            <h1 class="hero-title">Liver Disease<br>Prediction System</h1>
-            <p class="hero-desc">An intelligent machine learning system to predict the likelihood of liver disease based on medical parameters. Early prediction can help in better treatment and care.</p>
-            <a href="#predict-section" class="btn btn-primary-custom">
-              Get Started <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="col-lg-5 col-12 mt-5 mt-lg-0 animate__animated animate__fadeInRight">
-            <div class="hero-image-container">
-              <div class="hero-image-glow"></div>
-              <div class="pulse-point"></div>
-              <img src="/static/liver.jpg" alt="Liver Illustration">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Early Prediction Matters Section -->
-    <section class="why-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Why Early Prediction Matters?</h2>
-          <p>Liver diseases can be silent but dangerous. Early detection can save lives.</p>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-12 mb-4 animate__animated animate__fadeInUp">
-            <div class="why-card">
-              <div class="why-icon-wrapper icon-blue">
-                <i class="fas fa-stethoscope"></i>
-              </div>
-              <h4>Early Detection</h4>
-              <p>Identify potential liver diseases at an early stage, helping prevent advanced cirrhosis.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-            <div class="why-card">
-              <div class="why-icon-wrapper icon-green">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h4>Accurate Prediction</h4>
-              <p>Our ML model analyzes multiple laboratory biomarkers to provide high-precision indicators.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
-            <div class="why-card">
-              <div class="why-icon-wrapper icon-purple">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <h4>Better Treatment</h4>
-              <p>Timely diagnostic support assists doctors in formulating effective care plans quickly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about-section" class="about-section scroll-mt">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-12 animate__animated animate__fadeInLeft">
-            <h3 class="about-title">About This Project</h3>
-            <p class="about-text">This project uses machine learning algorithms trained on liver patient datasets to predict the presence of liver disease. It takes various clinical parameters as input and provides a prediction with accuracy. By analyzing key indicators, we aim to bridge clinical data and predictive diagnostics.</p>
-          </div>
-          <div class="col-lg-6 col-12 mt-5 mt-lg-0 animate__animated animate__fadeInRight">
-            <div class="stats-container">
-              <div class="stat-item">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Clinical Parameters</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">90%+</div>
-                <div class="stat-label">Model Accuracy</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">1000+</div>
-                <div class="stat-label">Records Trained</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Form Section -->
-    <section id="predict-section" class="form-section scroll-mt">
+    <!-- Form Body -->
+    <section class="form-section">
       <div class="container">
         <div class="col-xl-10 mx-auto">
           <div class="form-container animate__animated animate__fadeInUp">
@@ -602,7 +247,7 @@
             
             <p class="text-center text-muted mb-5">Please provide the patient details below to predict the likelihood of liver disease.</p>
 
-            <form id="predictionForm" novalidate>
+            <form id="predictionForm" action="/predict" method="POST" novalidate>
               <h5 class="mb-4 text-primary font-weight-bold">Patient Details</h5>
               
               <div class="row">
@@ -725,7 +370,7 @@
     </footer>
 
     <!-- Loading Modal -->
-    <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content" style="border-radius: 12px;">
           <div class="modal-body text-center p-5">
@@ -748,27 +393,11 @@
       $(document).ready(function() {
         // Initialize tooltips
         $('[title]').tooltip();
-
-        // Smooth scroll for nav links and buttons
-        $('a[href^="#"]').on('click', function(event) {
-          const target = $(this.getAttribute('href'));
-          if (target.length) {
-            event.preventDefault();
-            $('html, body').stop().animate({
-              scrollTop: target.offset().top
-            }, 600);
-            
-            // Update active link
-            $('.nav-link').removeClass('active');
-            $(this).addClass('active');
-          }
-        });
         
-        // AJAX Form Submission
+        // Form Submission
         $('#predictionForm').on('submit', function(e) {
-          e.preventDefault();
-          
           if (!validateForm()) {
+            e.preventDefault();
             return false;
           }
           
@@ -781,20 +410,7 @@
           });
           sessionStorage.setItem('patientData', JSON.stringify(patientData));
           
-          $.ajax({
-            type: 'POST',
-            url: '/predict',
-            data: $(this).serialize(),
-            success: function(response) {
-              $('#loadingModal').modal('hide');
-              // Replace body content with the result page response
-              $('body').html(response);
-            },
-            error: function(xhr) {
-              $('#loadingModal').modal('hide');
-              alert('Error occurred during prediction. Please try again.');
-            }
-          });
+          return true; // Submit naturally
         });
         
         // Validate form function
